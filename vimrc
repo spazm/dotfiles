@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " System
 Plugin 'ekalinin/Dockerfile.vim'
