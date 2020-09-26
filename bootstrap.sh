@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --recursive git://github.com/ceocoder/dotfiles.git ~/.dotfiles && echo "Cloned dotfiles" || echo "Looks like dotfiles exist"
+# git clone --recursive git://github.com/spazm/dotfiles.git ~/.dotfiles && echo "Cloned dotfiles" || echo "Looks like dotfiles exist"
 
 if [[ `uname` == 'Darwin' ]]; then
     echo "Mac OS X detected: installing homebrew"
@@ -32,7 +32,7 @@ else
                     sudo yum install tmux zsh vim
                     ;;
                 'Ubuntu')
-                    sudo apt-get install tmux zsh vim
+                    sudo apt-get install tmux zsh vim cmake
                     ;;
             esac
             ;;
@@ -61,7 +61,7 @@ ln -sv $PWD/vimrc $HOME/.vimrc
 ln -sv /usr/local/bin/vim /usr/local/bin/vi
 
 echo "Bootstrapping Vim Plugins"
-/usr/local/bin/vim  -c "BundleInstall" -c "q" -c "q"
+/usr/bin/vim  -c "BundleInstall" -c "q" -c "q"
 cd ~/.vim/bundle/YouCompleteMe && python ./install.py
 
 read -p "Changing default shell to zsh, OK? " yn
